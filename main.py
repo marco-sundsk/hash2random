@@ -28,6 +28,7 @@ def fillin_randomsource(hash, pace):
 
     for i in range(0, len(hash), pace):
         hex_str = hash[i:i+pace]
+        # print(hex_str)
         random_seq.append(int(hex_str, 16))
 
 
@@ -36,11 +37,11 @@ if __name__ == '__main__':
     print('Blockhash random Tool, scope is ', scope)
 
     if scope < 256:
-        pace = 1
-    elif scope < 65536:
         pace = 2
-    else:
+    elif scope < 65536:
         pace = 4
+    else:
+        pace = 8
 
     for hash in hashes:
         fillin_randomsource(hash, pace)
