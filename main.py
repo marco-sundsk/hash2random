@@ -9,13 +9,17 @@ __author__ = 'Marco'
 import math
 # the blockhash that used as random source
 hashes = [
-    '0x9934b223bb335fd8ae4d22cb36d1038305effe8a9e2325ca3790f76fca4e7435',  # 922508
-    '0x40a63c25fef700beb1fd925acc4578d0241d9f0f121c93e0e27767358b23ea0e',  # 922509
-    '0xa20f7f54b64c34c2e2971b2b706f5d8fbb5721b15fd8a3fa8f4fee1890623ef0',  # 922510
-    '0x6fcf87293babf5e82099f9bca59804027a90b2f49355753d7fc9fc4d97bc4e91',  # 922511
+    '0x8cc2b24c321aec063c8cea612205b1d6f29c05b1e57c3e0ee89a6e098bd24c5c',  # 1522171
+    '0xa8db223ec557970a1c6c1703f7389aa90dd70aa1248117dbcaacd75bb39c4db9',  # 
+    '0x09ca97024e075e31b1b99a1e89e377dad3decd6f5656e165cd97bdee100f5ca8',  # 
+    '0x8167be1fe2f52d9dae695bfa1fdd83d7886f2fdffd2857f78587cfa543cd19ee',  # 
+
+    '0xfa8fe621be2be23c28026c63a68ed94d380bf3e986883ff7bea25dc6c9ebd900',  # 
+    '0x434b23d9bb651f249236418133081d67de47055b8efa8fe7836c5e29caebd6fa',  # 
+    '0x4aea47d545eeb1d63876b538e446dc9ff61b878c96c78029c2f9fec4f13667d0',  # 1522177
 ]
 # the scope of participant
-scope = 10716
+scope = 12474
 
 random_seq = []
 rslt_seq = []
