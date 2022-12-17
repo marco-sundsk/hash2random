@@ -6,20 +6,17 @@ __author__ = 'Marco'
 
 """
 
+import sys
 import math
+import base58
+import binascii
+
 # the blockhash that used as random source
 hashes = [
-    '0x8cc2b24c321aec063c8cea612205b1d6f29c05b1e57c3e0ee89a6e098bd24c5c',  # 1522171
-    '0xa8db223ec557970a1c6c1703f7389aa90dd70aa1248117dbcaacd75bb39c4db9',  # 
-    '0x09ca97024e075e31b1b99a1e89e377dad3decd6f5656e165cd97bdee100f5ca8',  # 
-    '0x8167be1fe2f52d9dae695bfa1fdd83d7886f2fdffd2857f78587cfa543cd19ee',  # 
-
-    '0xfa8fe621be2be23c28026c63a68ed94d380bf3e986883ff7bea25dc6c9ebd900',  # 
-    '0x434b23d9bb651f249236418133081d67de47055b8efa8fe7836c5e29caebd6fa',  # 
-    '0x4aea47d545eeb1d63876b538e446dc9ff61b878c96c78029c2f9fec4f13667d0',  # 1522177
+    'GczTaWKjEVbuCRMJGrympqTJtW2TjD9AFxtkbUQBSU44',
+    '0x8cc2b24c321aec063c8cea612205b1d6f29c05b1e57c3e0ee89a6e098bd24c5c',
 ]
-# the scope of participant
-scope = 12474
+
 
 random_seq = []
 rslt_seq = []
@@ -28,6 +25,9 @@ rslt_seq = []
 def fillin_randomsource(hash, pace):
     if hash.startswith('0x'):
         hash = hash[2:]
+    else:  # assume it is a base-58 format blockhash
+        hash = binascii.hexlify(base58.b58decode(hash))
+
     print('Fill in random source:', hash)
 
     for i in range(0, len(hash), pace):
@@ -38,7 +38,13 @@ def fillin_randomsource(hash, pace):
 
 if __name__ == '__main__':
 
-    print('Blockhash random Tool, scope is ', scope)
+    if len(sys.argv) != 2:
+        print("Please attach candidates count as only argument.")
+        exit(0)
+
+    scope = int(sys.argv[1])
+
+    print('Blockhash random Tool, candidates count is ', scope)
 
     if scope < 256:
         pace = 2
