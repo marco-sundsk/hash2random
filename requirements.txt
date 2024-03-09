@@ -3,3 +3,4 @@ near-api==0.2.1
 ecdsa==0.17.0
 bitcoin-utils==0.6.5
 wheel==0.42.0
+near-seed-phrase-py==0.1.2
